@@ -8,21 +8,23 @@ model training for predicting customer churn in one command.
 
 ## Installation
 Please install the dependencies by running the following command:
-`pip install -r requirements_py3.8.txt`
+```pip install -r requirements_py3.8.txt```
 
 ## Execution
 Please make sure that your working directory is at the project's root. Then run the
-following command to execute the functionality offered in the project.
-`python clean_code/churn_library.py`
+following command to execute the functionality offered in the project:
+```python clean_code/churn_library.py```
 
 ## Tests
 The project contains tests for churn_library.py. These can be found in
 test_churn_library.py.
 
 Please execute and log the tests with the following command:
-`pytest clean_code/test_churn_library.py`
+```pytest clean_code/test_churn_library.py```
 
 ## Files and data description
+
+```
 .
 ├── __init__.py
 └── clean_code --> clean code project
@@ -46,3 +48,4 @@ Please execute and log the tests with the following command:
     ├── pyproject.toml --> toml file that includes ruff and pytest settings
     ├── requirements_py3.8.txt --> installation requirements
     └── test_churn_library.py --> unit tests
+```
