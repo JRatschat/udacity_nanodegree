@@ -47,5 +47,6 @@ Please execute and log the tests with the following command:
     │   └── churn_notebook.ipynb
     ├── pyproject.toml --> toml file that includes ruff and pytest settings
     ├── requirements_py3.8.txt --> installation requirements
+    ├── requirements_py3.8_dev.txt --> installation requirements for developers
     └── test_churn_library.py --> unit tests
 ```
