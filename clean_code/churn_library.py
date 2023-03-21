@@ -1,3 +1,9 @@
+"""
+Main file to load data, perform eda and feature engineering, and train models.
+
+Author: Jonathan Ratschat
+Date: 21.03.2022
+"""
 from pathlib import Path
 from typing import Tuple
 
