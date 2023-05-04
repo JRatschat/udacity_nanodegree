@@ -1,0 +1,1 @@
+*/10 * * * * python /Users/qy90eu/Developer/udacity_nanodegree/model_scoring_and_monitoring/fullprocess.py
