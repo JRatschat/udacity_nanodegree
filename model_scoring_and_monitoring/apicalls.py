@@ -1,5 +1,6 @@
 import requests
 import json
+import pandas as pd
 
 from pathlib import Path
 
@@ -8,12 +9,13 @@ from pathlib import Path
 with open('config.json','r') as f:
     config = json.load(f)
 model_path = Path().cwd() / config['output_model_path']
+test_data_path = (Path().cwd() / config['test_data_path'] / "testdata.csv").as_posix()
 
 #Specify a URL that resolves to your workspace
 URL = "http://0.0.0.0:8000/"
 
 #Call each API endpoint and store the responses
-response1 = requests.get(URL  + "prediction")
+response1 = requests.post(URL  + "prediction", json={"path": test_data_path})
 response2 = requests.get(URL + "scoring")
 response3 = requests.get(URL + "summarystats")
 response4 = requests.get(URL + "diagnostics")

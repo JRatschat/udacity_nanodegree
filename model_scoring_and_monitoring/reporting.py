@@ -19,13 +19,14 @@ with open('config.json','r') as f:
 
 dataset_csv_path = Path().cwd() / config['output_folder_path'] / "finaldata.csv"
 model_path = Path().cwd() / config['output_model_path']
+test_data_path = Path().cwd() / config['test_data_path'] / "testdata.csv"
 
 ##############Function for reporting
 def score_model():
     #calculate a confusion matrix using the test data and the deployed model
     #write the confusion matrix to the workspace
 
-    y_test, preds = model_predictions()
+    y_test, preds = model_predictions(test_data_path)
 
     cm = confusion_matrix(y_test, preds)
     disp = ConfusionMatrixDisplay(confusion_matrix=cm)

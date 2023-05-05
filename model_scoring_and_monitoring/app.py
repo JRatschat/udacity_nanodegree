@@ -1,4 +1,5 @@
 from flask import Flask, session, jsonify, request
+import pandas as pd
 
 from diagnostics import (
     model_predictions,
@@ -27,10 +28,11 @@ prediction_model = None
 
 
 #######################Prediction Endpoint
-@app.route("/prediction", methods=['GET','OPTIONS'])
+@app.route("/prediction", methods=['POST','OPTIONS'])
 def prediction():
     #call the prediction function you created in Step 3
-    _, preds = model_predictions()
+    input_json = request.get_json(force=True)
+    _, preds = model_predictions(input_json.get("path"))
     return jsonify(preds.tolist())
 
 #######################Scoring Endpoint

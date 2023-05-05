@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import timeit
 import os
-import json 
+import json
 
 import pickle
 from pathlib import Path
@@ -19,12 +19,11 @@ prod_deployment_path = Path().cwd() / config['prod_deployment_path']
 
 
 ##################Function to get model predictions
-def model_predictions():
+def model_predictions(path):
     with open(prod_deployment_path / "trainedmodel.pkl", "rb") as f:
         model = pickle.load(f)
 
-    df = pd.read_csv(test_data_path)
-
+    df = pd.read_csv(path)
     y_test = df["exited"]
     X_test = df.drop(["corporation", "exited"], axis=1)
 
@@ -112,7 +111,7 @@ def outdated_packages_list():
 
 
 if __name__ == '__main__':
-    model_predictions()
+    model_predictions(test_data_path)
     dataframe_summary()
     check_missing_data()
     execution_time()
